@@ -15,7 +15,7 @@ function App() {
   const [editedUser, setEditedUser] = useState(null);
   
   useEffect(() => {
-    Axios.get("http://localhost:3000/Mocks/users.json")
+    Axios.get(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_MOCKS_PRODUCTS_PATH}`)
       .then((response) => {
         if (response && response.status === 200) {
           setUsers(response.data);
